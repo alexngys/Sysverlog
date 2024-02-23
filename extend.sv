@@ -16,7 +16,7 @@ always_comb begin
       ImmExt = {{12{Instr[31]}}, Instr[19:12], Instr[20], Instr[30:21], 1'b0};
     end
     3'b100: begin // U-Type ??????
-      ImmExt = {{20{Instr[31]}}, Instr[31:20]};
+      ImmExt = {{12{Instr[31]}}, Instr[31:12]};
     end
   endcase
 end
