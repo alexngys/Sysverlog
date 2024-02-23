@@ -2,12 +2,12 @@ module program_counter (output logic [31:0] PC, PCPlus4,
                         input logic [31:0] PCTarget, ALUResult,
                         input logic [1:0] PCSrc, 
                         input logic Reset, CLK);
-logic PCNext[31:0], PCPlus4Out[31:0], PCOut[31:0]
-mux_3_to_1(PCNext,PCPlus4Out,PCTarget,ALUResult,PCSrc)
-pc(PCOut,PCNext,CLK,Reset)
-4_adder(PCOut,PCPlus4Out)
-assign PC=PCOut
-assign PCPlus4 = PCPlus4Out
+logic PCNext[31:0], PCPlus4Out[31:0], PCOut[31:0];
+mux_3_to_1(PCNext,PCPlus4Out,PCTarget,ALUResult,PCSrc);
+pc(PCOut,PCNext,CLK,Reset);
+4_adder(PCOut,PCPlus4Out);
+assign PC=PCOut;
+assign PCPlus4 = PCPlus4Out;
 endmodule
 
 module mux_3_to_1 (output logic [31:0] mux_out,
@@ -37,6 +37,6 @@ end
 endmodule
 
 module 4_adder (output logic [31:0] PCPlus4,
-                  input logic [31:0] PC)
+                  input logic [31:0] PC);
   assign PCPlus4 = PC + 32'd4;
 endmodule
