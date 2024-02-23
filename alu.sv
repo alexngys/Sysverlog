@@ -4,15 +4,40 @@ module alu (output logic [31:0] ALUResult,
             input logic [2:0] ALUControl);
 logic BInvert [31:0], MuxOut [31:0], Sum[31:0], AndOut[31:0], OrOut[31:0], ZeroExtOut[31:0], 6MuxOut[31:0];
 
-assign BInvert = ! SrcB;
-mux_2_to_1(MuxOut,SrcB,BInvert,ALUControl[0]);
-enable_adder(Sum,MuxOut,SrcA,ALUControl[0]);
-zero_ext(ZeroExtOut,Sum);
-and (AndOut,SrcA,SrcB);
-or (OrOut,SrcA,SrcB);
-mux_6_to_1(6MuxOut,Sum,Sum,AndOut,OrOut,SrcB,ZeroExtOut,ALUControl);
-assign ALUResult = 6MuxOut;
-assign Zero = ~(|6MuxOut); // NotSure?
+// assign BInvert = ! SrcB;
+// mux_2_to_1(MuxOut,SrcB,BInvert,ALUControl[0]);
+// enable_adder(Sum,MuxOut,SrcA,ALUControl[0]);
+// zero_ext(ZeroExtOut,Sum);
+// and (AndOut,SrcA,SrcB);
+// or (OrOut,SrcA,SrcB);
+// mux_6_to_1(6MuxOut,Sum,Sum,AndOut,OrOut,SrcB,ZeroExtOut,ALUControl);
+// assign ALUResult = 6MuxOut;
+// assign Zero = ~(|6MuxOut); // NotSure?
+always_comb begin
+  case (ALUControl)
+    3'b000: begin // ADD
+      MuxOut = SrcA + SrcB
+    end
+    3'b001: begin // SUB
+      MuxOut = SrcA - SrcB
+    end
+    3'b010: begin // AND
+      MuxOut = SrcA & SrcB
+    end
+    3'b011: begin // OR
+      MuxOut = SrcA | SrcB
+    end
+    3'b100: begin // LUI / B
+      MuxOut = SrcB
+    end
+    3'b101: begin // SLT
+      MuxOut = SrcA < SrcB ? 32'b1 : 32'b0;
+    end
+  endcase
+  assign ALUResult = MuxOut;
+  assign Zero = (MuxOut == 32'b0) ? 1'b1 : 1'b0; // NotSure?
+end
+
 endmodule
 
 module mux_2_to_1 (output logic [31:0] mux_out,
