@@ -39,7 +39,7 @@ always_comb begin
           3'b010: ALUControl = 3'b101; // SLT    
         endcase
       end
-      7'b0010011: begin // I-Type (Immediate ALU Ops)
+      7'b0010011: begin // I-Type (Imm ALU Ops)
         ALUSrc = 1;
         case (funct3)
           3'bx000: ALUControl = 3'b000; // ADDI
