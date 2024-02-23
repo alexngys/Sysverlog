@@ -74,7 +74,6 @@ always_comb begin
         PCSrc= 2'b01
       end
       7'b1100111: begin // JALR
-        ImmSrc = 3'b010; // problem here
         ALUSrc = 1;
         ALUControl = 3'b000; 
         ResultSrc = 2'b10
