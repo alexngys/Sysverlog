@@ -18,8 +18,6 @@ always_comb begin
     3'b100: MuxOut = SrcB; // LUI / B
       
     3'b101: MuxOut = (SrcA < SrcB) ? 32'b1 : 32'b0; // SLT
-      
-
   endcase
   ALUResult = MuxOut;
   Zero = (MuxOut == 32'b0) ? 1'b1 : 1'b0; 

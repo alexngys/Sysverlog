@@ -1,0 +1,180 @@
+$date
+	Sun Feb 25 13:56:46 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module control_unit_tb $end
+$var wire 2 ! t_ResultSrc [1:0] $end
+$var wire 1 " t_RegWrite $end
+$var wire 2 # t_PCSrc [1:0] $end
+$var wire 1 $ t_MemWrite $end
+$var wire 3 % t_ImmSrc [2:0] $end
+$var wire 1 & t_ALUSrc $end
+$var wire 3 ' t_ALUControl [2:0] $end
+$var reg 32 ( t_Instr [31:0] $end
+$var reg 1 ) t_Zero $end
+$scope module dut $end
+$var wire 32 * Instr [31:0] $end
+$var wire 1 ) Zero $end
+$var wire 7 + opcode [6:0] $end
+$var wire 7 , funct7 [6:0] $end
+$var wire 3 - funct3 [2:0] $end
+$var reg 3 . ALUControl [2:0] $end
+$var reg 1 & ALUSrc $end
+$var reg 3 / ImmSrc [2:0] $end
+$var reg 1 $ MemWrite $end
+$var reg 2 0 PCSrc [1:0] $end
+$var reg 1 " RegWrite $end
+$var reg 2 1 ResultSrc [1:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 1
+b0 0
+b0 /
+b0 .
+b0 -
+b0 ,
+b110011 +
+b110011 *
+0)
+b110011 (
+b0 '
+0&
+b0 %
+0$
+b0 #
+1"
+b0 !
+$end
+#10000
+b1 '
+b1 .
+b10100 ,
+b101000000000000000000000110011 (
+b101000000000000000000000110011 *
+#20000
+b11 '
+b11 .
+b110 -
+b0 ,
+b110000000110011 (
+b110000000110011 *
+#30000
+b10 '
+b10 .
+b111 -
+b111000000110011 (
+b111000000110011 *
+#40000
+b101 '
+b101 .
+b10 -
+b10000000110011 (
+b10000000110011 *
+#50000
+1&
+b0 '
+b0 .
+b10011 +
+b0 -
+b10011 (
+b10011 *
+#60000
+b11 '
+b11 .
+1&
+b110 -
+b110000000010011 (
+b110000000010011 *
+#70000
+b10 '
+b10 .
+1&
+b111 -
+b111000000010011 (
+b111000000010011 *
+#80000
+b1 !
+b1 1
+b0 '
+b0 .
+1&
+b11 +
+b10 -
+b10000000000011 (
+b10000000000011 *
+#90000
+1$
+b1 %
+b1 /
+0"
+bx !
+bx 1
+1&
+b100011 +
+b10000000100011 (
+b10000000100011 *
+#100000
+b1 #
+b1 0
+b1 '
+b1 .
+b0 !
+b0 1
+0$
+0&
+b10 %
+b10 /
+0"
+b1100011 +
+b0 -
+b1100011 (
+b1100011 *
+#110000
+b10 !
+b10 1
+x&
+b1 #
+b1 0
+bx '
+bx .
+b11 %
+b11 /
+1"
+b1101111 +
+b1101111 (
+b1101111 *
+#120000
+b10 #
+b10 0
+b10 !
+b10 1
+b0 '
+b0 .
+1&
+b0 %
+b0 /
+b1100111 +
+b1100111 (
+b1100111 *
+#130000
+b100 '
+b100 .
+b100 %
+b100 /
+b0 #
+b0 0
+b0 !
+b0 1
+1&
+b110111 +
+b110111 (
+b110111 *
+#140000
