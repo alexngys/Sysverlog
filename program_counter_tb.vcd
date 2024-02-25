@@ -1,0 +1,249 @@
+$date
+	Sun Feb 25 10:59:19 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module program_counter_tb $end
+$var wire 32 ! t_PCPlus4 [31:0] $end
+$var wire 32 " t_PC [31:0] $end
+$var reg 32 # t_ALUResult [31:0] $end
+$var reg 1 $ t_CLK $end
+$var reg 2 % t_PCSrc [1:0] $end
+$var reg 32 & t_PCTarget [31:0] $end
+$var reg 1 ' t_Reset $end
+$scope module dut $end
+$var wire 32 ( ALUResult [31:0] $end
+$var wire 1 $ CLK $end
+$var wire 32 ) PC [31:0] $end
+$var wire 32 * PCPlus4 [31:0] $end
+$var wire 2 + PCSrc [1:0] $end
+$var wire 32 , PCTarget [31:0] $end
+$var wire 1 ' Reset $end
+$var wire 32 - PCPlus4Out [31:0] $end
+$var wire 32 . PCOut [31:0] $end
+$var wire 32 / PCNext [31:0] $end
+$scope module adder_4 $end
+$var wire 32 0 PCPlus4 [31:0] $end
+$var wire 32 1 PC [31:0] $end
+$upscope $end
+$scope module mux_3_to_1 $end
+$var wire 32 2 a [31:0] $end
+$var wire 32 3 b [31:0] $end
+$var wire 32 4 c [31:0] $end
+$var wire 2 5 select [1:0] $end
+$var reg 32 6 mux_out [31:0] $end
+$upscope $end
+$scope module pc $end
+$var wire 1 $ clk $end
+$var wire 32 7 pc_in [31:0] $end
+$var wire 1 ' reset $end
+$var reg 32 8 pc_out [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx 8
+b0 7
+b0 6
+b1 5
+b100 4
+b0 3
+bx 2
+bx 1
+bx 0
+b0 /
+bx .
+bx -
+b0 ,
+b1 +
+bx *
+bx )
+b100 (
+0'
+b0 &
+b1 %
+0$
+b100 #
+bx "
+bx !
+$end
+#10000
+b100 !
+b100 *
+b100 -
+b100 0
+b100 2
+b0 "
+b0 )
+b0 .
+b0 1
+b0 8
+b100 /
+b100 6
+b100 7
+b10 &
+b10 ,
+b10 3
+b0 %
+b0 +
+b0 5
+1$
+#20000
+0$
+#30000
+b1000 /
+b1000 6
+b1000 7
+b1000 !
+b1000 *
+b1000 -
+b1000 0
+b1000 2
+b100 "
+b100 )
+b100 .
+b100 1
+b100 8
+1$
+#40000
+b10 /
+b10 6
+b10 7
+b1 %
+b1 +
+b1 5
+0$
+#50000
+b110 !
+b110 *
+b110 -
+b110 0
+b110 2
+b10 "
+b10 )
+b10 .
+b10 1
+b10 8
+1$
+#60000
+0$
+#70000
+1$
+#80000
+b100 /
+b100 6
+b100 7
+b10 %
+b10 +
+b10 5
+0$
+#90000
+b1000 !
+b1000 *
+b1000 -
+b1000 0
+b1000 2
+b100 "
+b100 )
+b100 .
+b100 1
+b100 8
+1$
+#100000
+0$
+#110000
+1$
+#120000
+b100 !
+b100 *
+b100 -
+b100 0
+b100 2
+b0 "
+b0 )
+b0 .
+b0 1
+b0 8
+b100 /
+b100 6
+b100 7
+1'
+b0 %
+b0 +
+b0 5
+0$
+#130000
+b1000 /
+b1000 6
+b1000 7
+b1000 !
+b1000 *
+b1000 -
+b1000 0
+b1000 2
+b100 "
+b100 )
+b100 .
+b100 1
+b100 8
+0'
+1$
+#140000
+0$
+#150000
+b1100 /
+b1100 6
+b1100 7
+b1100 !
+b1100 *
+b1100 -
+b1100 0
+b1100 2
+b1000 "
+b1000 )
+b1000 .
+b1000 1
+b1000 8
+1$
+#160000
+0$
+#170000
+b10000 /
+b10000 6
+b10000 7
+b10000 !
+b10000 *
+b10000 -
+b10000 0
+b10000 2
+b1100 "
+b1100 )
+b1100 .
+b1100 1
+b1100 8
+1$
+#180000
+0$
+#190000
+b10100 /
+b10100 6
+b10100 7
+b10100 !
+b10100 *
+b10100 -
+b10100 0
+b10100 2
+b10000 "
+b10000 )
+b10000 .
+b10000 1
+b10000 8
+1$
+#200000
+0$
