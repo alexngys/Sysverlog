@@ -11,11 +11,12 @@ module extend_tb;
     $dumpfile("extend_tb.vcd");
     $dumpvars(0, extend_tb);
 
-    // Test 1: I-Type 
-    Instr = 32'b00000000110001001000010000010011; // addi rd, rs1 imm | 8 9 12
-    ImmSrc = 3'b000; // I-Type
-    #10; // Wait for 10ns
-    
+    Instr = 32'b00000000110001001000010000010011; ImmSrc = 3'b000; // I-Type addi rd, rs1 imm | 8 9 12
+    #10; Instr = 32'b11111110011110011010110100100011; ImmSrc = 3'b001; // S Type sw
+    #10; Instr = 32'b00000001111001000000100001100011; ImmSrc = 3'b010; // B Type beq
+    #10; Instr = 32'b01111111100010100110000011101111; ImmSrc = 3'b011; // J Type jal
+    #10; Instr  = 32'b10001100110111101111101010110111; ImmSrc = 3'b100; // U Type lui
+    #10;  
 
   end
 
