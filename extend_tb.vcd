@@ -1,5 +1,5 @@
 $date
-	Mon Feb 26 12:36:46 2024
+	Mon Feb 26 14:51:51 2024
 $end
 $version
 	Icarus Verilog
@@ -8,9 +8,9 @@ $timescale
 	1ps
 $end
 $scope module extend_tb $end
-$var wire 32 ! ImmExt [31:0] $end
-$var reg 3 " ImmSrc [2:0] $end
-$var reg 32 # Instr [31:0] $end
+$var wire 32 ! t_ImmExt [31:0] $end
+$var reg 3 " t_ImmSrc [2:0] $end
+$var reg 32 # t_Instr [31:0] $end
 $scope module dut $end
 $var wire 3 $ ImmSrc [2:0] $end
 $var wire 32 % Instr [31:0] $end
