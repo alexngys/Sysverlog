@@ -1,0 +1,30 @@
+$date
+	Sun Feb 25 14:14:50 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module extend_tb $end
+$var wire 32 ! ImmExt [31:0] $end
+$var reg 3 " ImmSrc [2:0] $end
+$var reg 32 # Instr [31:0] $end
+$scope module dut $end
+$var wire 3 $ ImmSrc [2:0] $end
+$var wire 32 % Instr [31:0] $end
+$var reg 32 & ImmExt [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1100 &
+b110001001000010000010011 %
+b0 $
+b110001001000010000010011 #
+b0 "
+b1100 !
+$end
+#10000
