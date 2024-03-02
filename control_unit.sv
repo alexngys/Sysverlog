@@ -23,7 +23,7 @@ always_comb begin
     case (opcode)
       7'b0110011: begin
         case (funct3)
-          3'b000: ALUControl = (funct7 == 7'b010100) ? 3'b001 : 3'b000; // SUB or ADD
+          3'b000: ALUControl = (funct7 == 7'b0100000) ? 3'b001 : 3'b000; // SUB or ADD
           3'b110: ALUControl = 3'b011; // OR
           3'b111: ALUControl = 3'b010; // AND
           3'b010: ALUControl = 3'b101; // SLT    
@@ -54,7 +54,7 @@ always_comb begin
         RegWrite = 0;
         ImmSrc = 3'b010;
         ALUControl = 3'b001; 
-        PCSrc= 2'b01;
+        PCSrc= (Zero == 1) ? 2'b01 : 2'b00;
       end
       7'b1101111: begin // JAL
         ImmSrc = 3'b011;

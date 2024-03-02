@@ -6,7 +6,7 @@ always_comb begin
   case (ImmSrc)
     3'b000: ImmExt = {{20{Instr[31]}}, Instr[31:20]}; // I-Type
       
-    3'b001: ImmExt = {{20{Instr[31]}}, Instr[31:25], Instr[17:11]}; // S-Type
+    3'b001: ImmExt = {{20{Instr[31]}}, Instr[31:25], Instr[11:7]}; // S-Type
       
     3'b010: ImmExt = {{19{Instr[31]}}, Instr[31], Instr[7], Instr[30:25], Instr[11:8], 1'b0}; // B-Type
       
