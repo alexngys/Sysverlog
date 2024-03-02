@@ -5,6 +5,8 @@ module data_memory_and_io (output logic [31:0] RD, CPUOut,
 logic [7:0] DM [0:1023];
 logic RDsel, WEM, WEOut;
 
+// if A == 32'hFFFFFFFC use memory if not use CPUInOut
+
 // if WE is 0 / RD output mode
 assign RDsel = (A == 32'hFFFFFFFC) ? 1 : 0; // if A RDsel == 1 and read CPUIn else memory
 
