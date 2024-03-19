@@ -10,7 +10,7 @@ module extend_tb;
   initial begin
     $dumpfile("extend_tb.vcd");
     $dumpvars(0, extend_tb);
-    t_Instr = 32'b00000000110001001000010000010011; t_ImmSrc = 3'b000; // I-Type addi rd, rs1 imm | 8 9 12
+    t_Instr = 32'b00000000110001001000010000010011; t_ImmSrc = 3'b000; // I-Type addi rd, rs1, imm | 8, 9, 12
     #10 t_Instr = 32'b11111110011110011010110100100011; t_ImmSrc = 3'b001; // S Type sw
     #10 t_Instr = 32'b00000001111001000000100001100011; t_ImmSrc = 3'b010; // B Type beq
     #10 t_Instr = 32'b01111111100010100110000011101111; t_ImmSrc = 3'b011; // J Type jal
